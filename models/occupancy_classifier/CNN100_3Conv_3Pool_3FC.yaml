@@ -1,0 +1,35 @@
+DATASET:
+  BATCH_SIZE: 128
+  CLASSES:
+  - empty
+  - occupied
+  PATH: data/occupancy
+  TRANSFORMS:
+    CENTER_CROP: null
+    COLOR_JITTER:
+      BRIGHTNESS: 0.0
+      CONTRAST: 0.0
+      HUE: 0.0
+      SATURATION: 0.0
+    RANDOM_HORIZONTAL_FLIP: 0.5
+    RESIZE:
+    - 100
+    - 100
+    SCALE:
+      HORIZONTAL: null
+      VERTICAL: null
+    SHEAR: null
+    TRANSLATE:
+      HORIZONTAL: null
+      VERTICAL: null
+  WORKERS: 2
+TRAINING:
+  MODEL:
+    NAME: CNN100_3Conv_3Pool_3FC
+    REGISTRY: OCCUPANCY_CLASSIFIER
+  PHASES:
+  - EPOCHS: 3
+    OPTIMIZER:
+      LEARNING_RATE: 0.001
+      NAME: Adam
+    PARAMS: all
